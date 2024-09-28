@@ -13,7 +13,6 @@ header {
   margin: 0 auto;
 }
 
-/* Navigation menu Start */
 .nav-container {
   display: flex;
   align-items: center;
@@ -47,7 +46,6 @@ header {
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
   filter: brightness(1.1);
 }
-
 .nav-menu {
   list-style-type: none;
   margin: 0;
@@ -67,7 +65,7 @@ header {
   font-weight: 500;
 }
 
-.nav-menu li a.active {
+/* .nav-menu li a.active {
   background-color: #f0f0f0;
   border-radius: 5px;
   padding: 5px 10px;
@@ -78,9 +76,9 @@ header {
 .nav-menu li a.active:hover {
   background-color: #e0e0e0;
   color: #000;
-}
+} */
 
-/* Navigation menu End */
+/* Navigation menu End*/
 
 /* Projects Section Start */
 .projects {

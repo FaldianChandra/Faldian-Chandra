@@ -13,7 +13,6 @@ header {
   margin: 0 auto;
 }
 
-/* Navigation menu Start */
 .nav-container {
   display: flex;
   align-items: center;
@@ -67,23 +66,8 @@ header {
   font-weight: 500;
 }
 
-.nav-menu li a.active {
-  background-color: #f0f0f0;
-  border-radius: 5px;
-  padding: 5px 10px;
-  color: #333;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.nav-menu li a.active:hover {
-  background-color: #e0e0e0;
-  color: #000;
-}
-
-/* Navigation menu End */
-
-/* Intro Text Section */
 .first-text {
+  display: block;
   text-align: left;
   margin-bottom: 50px;
   margin-left: 7%;
@@ -99,24 +83,27 @@ header {
   color: #646464;
 }
 
-/* Image Container Section */
 .image-container {
   max-width: 1200px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  display: flex;
+  justify-content: center;
   gap: 20px;
+  flex-wrap: wrap; /* Added this to make images wrap in smaller screens */
 }
 
 .image-card {
   position: relative;
+  width: 200px;
+  height: 200px;
   overflow: hidden;
   border-radius: 10px;
+  transform: perspective(600px) rotateY(0deg);
   transition: transform 0.6s;
 }
 
 .image-card:hover {
-  transform: scale(1.05);
+  transform: perspective(600px) rotateY(180deg);
 }
 
 .image-card img {
@@ -139,35 +126,40 @@ header {
   justify-content: center;
   align-items: center;
   text-align: center;
+  padding: 20px;
   opacity: 0;
+  transform: rotateY(180deg);
   transition: opacity 0.6s;
+}
+
+.image-info p {
+  margin: 5px 0;
 }
 
 .image-card:hover .image-info {
   opacity: 1;
 }
 
-/* About Section */
 .about-section,
 .connect-section {
   max-width: 1200px;
   margin: 0 auto;
   padding: 50px 20px;
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
+  align-items: flex-start;
 }
 
 .about-title,
 .connect-title {
-  flex-basis: 100%;
+  flex-basis: 20%;
   font-weight: bold;
-  font-size: 1.5rem;
+  font-size: 1rem;
   color: #888;
 }
 
 .about-content,
 .connect-content {
+  flex-basis: 80%;
   font-size: 1rem;
   line-height: 1.6;
 }
@@ -176,10 +168,9 @@ header {
   margin-bottom: 20px;
 }
 
-/* Connect Section */
 .connect-content {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
 }
 
@@ -207,42 +198,56 @@ header {
   font-size: 1rem;
 }
 
-/* Media Queries */
 @media (max-width: 768px) {
+  /* Adjust logo size and text */
+  .logo {
+    width: 45px;
+    height: 45px;
+    font-size: 28px;
+  }
+
+  /* Align the nav-menu vertically in small screens */
   .nav-container {
     flex-direction: column;
   }
 
   .nav-menu {
     flex-direction: column;
-    gap: 10px;
   }
 
+  .nav-menu li {
+    margin-bottom: 10px;
+  }
+
+  /* Adjust first-text */
   .first-text {
-    text-align: center;
-    margin-left: 0;
+    margin-left: 3%;
+  }
+
+  /* Stack images vertically in smaller screens */
+  .image-container {
+    flex-direction: column;
+    align-items: center;
   }
 
   .about-section,
   .connect-section {
     flex-direction: column;
+    align-items: flex-start;
   }
 
+  .about-title,
+  .connect-title {
+    flex-basis: 100%;
+  }
+
+  .about-content,
   .connect-content {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 480px) {
-  .first-text h1 {
-    font-size: 1.5rem;
+    flex-basis: 100%;
   }
 
-  .first-text p {
-    font-size: 0.9rem;
-  }
-
-  .connect-item {
-    font-size: 0.9rem;
+  /* Make connect items fit smaller screens */
+  .connect-content {
+    width: 100%;
   }
 }
