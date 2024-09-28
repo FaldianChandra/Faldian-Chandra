@@ -13,7 +13,7 @@ header {
   margin: 0 auto;
 }
 
-/* Navigation menu Start*/
+/* Navigation menu Start */
 .nav-container {
   display: flex;
   align-items: center;
@@ -47,6 +47,7 @@ header {
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
   filter: brightness(1.1);
 }
+
 .nav-menu {
   list-style-type: none;
   margin: 0;
@@ -78,7 +79,8 @@ header {
   background-color: #e0e0e0;
   color: #000;
 }
-/* Navigation menu End*/
+
+/* Navigation menu End */
 
 /* Projects Section Start */
 .projects {
@@ -93,8 +95,8 @@ header {
 
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Membuat 3 kolom */
-  gap: 20px; /* Jarak antar kartu proyek */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
 }
 
 .project-card {
@@ -124,4 +126,76 @@ header {
   font-size: 1rem;
   color: #888;
 }
+
 /* Projects Section End */
+
+/* Responsive Design with Media Queries */
+@media (max-width: 1024px) {
+  .nav-container {
+    flex-direction: column;
+  }
+
+  .nav-menu {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-container {
+    padding: 10px 10px;
+  }
+
+  .logo {
+    width: 50px;
+    height: 50px;
+    font-size: 32px;
+  }
+
+  .nav-menu li {
+    margin: 0 10px;
+  }
+
+  .projects h2 {
+    font-size: 1.2rem;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card {
+    padding: 15px;
+  }
+
+  .project-card img {
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  .project-card p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .projects h2 {
+    font-size: 1rem;
+  }
+
+  .project-card {
+    padding: 10px;
+  }
+
+  .project-card img {
+    width: 100%;
+  }
+
+  .project-card p {
+    font-size: 0.8rem;
+  }
+}

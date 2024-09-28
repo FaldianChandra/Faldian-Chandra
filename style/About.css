@@ -13,6 +13,7 @@ header {
   margin: 0 auto;
 }
 
+/* Navigation menu Start */
 .nav-container {
   display: flex;
   align-items: center;
@@ -46,6 +47,7 @@ header {
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
   filter: brightness(1.1);
 }
+
 .nav-menu {
   list-style-type: none;
   margin: 0;
@@ -78,10 +80,10 @@ header {
   color: #000;
 }
 
-/* Navigation menu End*/
+/* Navigation menu End */
 
+/* Intro Text Section */
 .first-text {
-  display: block;
   text-align: left;
   margin-bottom: 50px;
   margin-left: 7%;
@@ -97,26 +99,24 @@ header {
   color: #646464;
 }
 
+/* Image Container Section */
 .image-container {
   max-width: 1200px;
   margin: 0 auto;
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
 }
 
 .image-card {
   position: relative;
-  width: 200px;
-  height: 200px;
   overflow: hidden;
   border-radius: 10px;
-  transform: perspective(600px) rotateY(0deg);
   transition: transform 0.6s;
 }
 
 .image-card:hover {
-  transform: perspective(600px) rotateY(180deg);
+  transform: scale(1.05);
 }
 
 .image-card img {
@@ -139,40 +139,35 @@ header {
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 20px;
   opacity: 0;
-  transform: rotateY(180deg);
   transition: opacity 0.6s;
-}
-
-.image-info p {
-  margin: 5px 0;
 }
 
 .image-card:hover .image-info {
   opacity: 1;
 }
 
+/* About Section */
 .about-section,
 .connect-section {
   max-width: 1200px;
   margin: 0 auto;
   padding: 50px 20px;
   display: flex;
-  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .about-title,
 .connect-title {
-  flex-basis: 20%;
+  flex-basis: 100%;
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 1.5rem;
   color: #888;
 }
 
 .about-content,
 .connect-content {
-  flex-basis: 80%;
   font-size: 1rem;
   line-height: 1.6;
 }
@@ -181,9 +176,10 @@ header {
   margin-bottom: 20px;
 }
 
+/* Connect Section */
 .connect-content {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
 }
 
@@ -209,4 +205,44 @@ header {
 
 .connect-item span {
   font-size: 1rem;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+  }
+
+  .nav-menu {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .first-text {
+    text-align: center;
+    margin-left: 0;
+  }
+
+  .about-section,
+  .connect-section {
+    flex-direction: column;
+  }
+
+  .connect-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .first-text h1 {
+    font-size: 1.5rem;
+  }
+
+  .first-text p {
+    font-size: 0.9rem;
+  }
+
+  .connect-item {
+    font-size: 0.9rem;
+  }
 }
