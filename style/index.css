@@ -192,7 +192,6 @@ footer {
 
 /* Media Queries for Responsiveness */
 
-/* Smaller screens (tablets) */
 @media (max-width: 768px) {
   .nav-container {
     flex-direction: column;
@@ -216,11 +215,10 @@ footer {
   }
 
   .project-card {
-    width: 80%;
+    width: 100%;
   }
 }
 
-/* Extra small screens (phones) */
 @media (max-width: 480px) {
   .intro h1 {
     font-size: 1.8rem;
@@ -241,6 +239,5 @@ footer {
 
   .project-card {
     width: 100%;
-    margin-bottom: 20px;
   }
 }
