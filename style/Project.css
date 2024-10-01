@@ -139,20 +139,98 @@ header {
 
 /* Projects Section End */
 
-/* Responsive Design with Media Queries */
-@media (max-width: 1024px) {
-  .nav-container {
-    flex-direction: column;
-  }
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px 0;
+  border-top: 1px solid #eaeaea;
+  margin-top: 40px;
+  font-size: 0.9rem;
+  color: #888;
+}
 
-  .nav-menu {
-    flex-direction: column;
-    align-items: center;
-  }
+/* Dark - Theme */
 
-  .project-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+body.dark-mode header {
+  background-color: #121212;
+}
+
+body.dark-mode .logo {
+  color: #e0e0e0;
+}
+
+body.dark-mode .nav-menu li a {
+  color: #e0e0e0;
+}
+
+body.dark-mode {
+  background-color: #121212;
+  color: white;
+}
+
+body {
+  background-color: white;
+  color: black;
+}
+
+body.dark-mode .project-card {
+  background-color: #1f1f1f;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Switch Button */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #2196f3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
 }
 
 @media (max-width: 768px) {
